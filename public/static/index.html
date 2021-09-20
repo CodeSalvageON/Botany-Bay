@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Botany Bay</title>
+
+    <link href="https://codesalvageon.github.io/magichat/styles/index.css" rel="stylesheet" type="text/css">
+    <link href="/static/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body> 
+   <h3 class="glow-augment" class="fixed">S.S. Botany Bay</h3>
+   <h3 class="glow-augment" class="fixed" id="datetime"></h3>
+
+   <div class="center center-absolute"> 
+     <div id="tool-hud">
+       <div id="hud-left">
+         <div id="hud-input1" class="add-scroll" align="left"> 
+           <h3 class="glow-augment">Place word problems and general problems here.</h3>
+           <form id="word-problems">
+             <h3 class="glow-augment">Problem: <input id="word-problems-input" type="text" class="input glow-augment" required/><button class="augbutton" id="scan-word-problems">Scan</button></h3>
+           </form>
+           <div id="word-problems-answers">
+           </div>
+         </div>
+         <div id="hud-input2" class="add-scroll" align="left"> 
+           <h3 class="glow-augment">Place course names and subjects to scan for answer keys.</h3>
+           <form id="answer-keys">
+             <h3 class="glow-augment">Course Name: <input id="answer-keys-input" type="text" class="input glow-augment" required/></h3>
+             
+             <h3 class="glow-augment">Choose an educational software or company: <select id="company-select" class="input glow-augment"><option value="svr">Savvas Realize</option><option value="iready">i-Ready</option><option value="ixl">IXL</option><option value="pearson">Pearson</option><option value="commonlit">Commonlit</option><option value="mgh">McGraw-Hill</option><option value="bim">Big Ideas Math</option><option value="nela">Newsela</option><option value="schol">Scholastic</option><option value="cgl">Cengage Learning</option><option value="hmh">Houghton Mifflin Harcourt</option></select><input type="text" id="custom-company-select" class="input glow-augment" placeholder="Choose your own"/><button class="augbutton" id="scan-answer-keys">Scan</button></h3>
+           </form>
+           <div id="answer-keys-links">
+           </div>
+         </div>
+         <div id="hud-input6" class="add-scroll" align="left">
+           <h3 class="glow-augment">Proxy to unblock sites.</h3>
+           <form id="proxy-form">
+             <h3 class="glow-augment">URL: <input type="text" class="input glow-augment" id="url-input"><button class="augbutton">Go!</button></h3>
+           </form>
+         </div>
+       </div>
+       <div id="hud-right"> 
+         <div id="hud-input3" class="add-scroll" align="left">
+           <h3 class="glow-augment">Perform basic calculations here.</h3>
+           <form id="basic-calc">
+             <h3 class="glow-augment">Calculate: <input id="num1" type="text" class="input glow-augment"> <select id="eqtype" class="input glow-augment"><option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="÷">÷</option></select> <input id="num2" type="text" class="input glow-augment"><button class="augbutton" id="calc-basic">Execute</button></h3> 
+             <h3 class="glow-augment" id="basic-calc-result">Result: </h3>
+           </form> 
+         </div>
+         <div>
+           <div class="add-scroll" id="hud-input4" align="left">
+             <h3 class="glow-augment">Custom calendar and 5 megabytes of notes, as well as a chatroom.</h3> 
+             <button class="augbutton" id="open-calendar">Open Calendar</button><button class="augbutton" id="open-notes">Open Notes</button><button class="augbutton" id="open-chat">Open Chatroom</button>
+           </div> 
+         </div>
+         <div class="add-scroll" id="hud-input5" align="left"> 
+           <h3 class="glow-augment">Simplify Expressions.</h3>
+           <form id="simplify"> 
+             <h3 class="glow-augment">Compute: <input type="text" id="expression" class="input glow-augment"/><button class="augbutton" id="simplify-button">Execute</button></h3>
+           </form>
+           <h3 class="glow-augment" id="expression-result">Result: </h3>
+         </div>
+       </div>
+     </div>
+     <div id="notes-hud"> 
+       <button class="augbutton" id="back-to-tool-hud-from-notes">Return to main display</button><button class="augbutton" id="save-notes">Save notes</button>
+       <br/>
+       <textarea id="notes" class="add-scroll" maxlength="5000000">
+       </textarea>
+     </div>
+     <div id="calendar-hud">
+       <button class="augbutton" id="back-to-tool-hud-from-calendar">Return to main display</button><button class="augbutton" id="save-calendar">Save Calendar</button>
+       <br/>
+       <pre class="glow-augment" id="days"><h3>Mon         Tue          Wed         Thu          Fri          Sat          Sun</h3></pre>
+       <br/>
+       <br/>
+       <br/>
+       <center class="flex" id="timbeblocks">
+         <input class="timeblock" id="tb1"></input> <input class="timeblock" id="tb2"></input> <input class="timeblock" id="tb3"></input> <input class="timeblock" id="tb4"></input> <input class="timeblock" id="tb5"></input> <input class="timeblock" id="tb6"></input> <input class="timeblock" id="tb7"></input>
+       </center>
+       <center class="flex">
+         <input class="timeblock" id="tb8"></input> <input class="timeblock" id="tb9"></input> <input class="timeblock" id="tb10"></input> <input class="timeblock" id="tb11"></input> <input class="timeblock" id="tb12"></input> <input class="timeblock" id="tb13"></input> <input class="timeblock" id="tb14"></input>
+       </center>
+       <center class="flex">
+         <input class="timeblock" id="tb15"></input> <input class="timeblock" id="tb16"></input> <input class="timeblock" id="tb17"></input> <input class="timeblock" id="tb18"></input> <input class="timeblock" id="tb19"></input> <input class="timeblock" id="tb20"></input> <input class="timeblock" id="tb21"></input>
+       </center>
+       <center class="flex">
+         <input class="timeblock" id="tb22"></input> <input class="timeblock" id="tb23"></input> <input class="timeblock" id="tb24"></input> <input class="timeblock" id="tb25"></input> <input class="timeblock" id="tb26"></input> <input class="timeblock" id="tb27"></input> <input class="timeblock" id="tb28"></input>
+       </center>
+       <center class="flex">
+         <input class="timeblock" id="tb29"></input> <input class="timeblock" id="tb30"></input> <input class="timeblock" id="tb31"></input>
+       </center>
+     </div>
+     <div id="chatroom-hud"> 
+       <button class="augbutton" id="back-to-tool-hud-from-chat">Return to main display</button>
+       <hr/>
+       <form id="set-name"> 
+         <h3 class="glow-augment">Set name: <input id="name-set" type="text" class="input glow-augment" required maxlength="100"/><button class="augbutton">Set</button></h3>
+       </form>
+       <div id="chatbox" class="center-absolute add-scroll"> 
+         </div>
+         <form id="chat-msg">
+           <h3 class="glow-augment">Message: <input type="text" class="input glow-augment" id="msg-for-chat" required maxlength="500"/><button class="augbutton">Transmit</button></h3> 
+         </form>
+     </div>
+    </div>
+
+   <script src="https://codesalvageon.github.io/magichat/scripts/math.js"></script>
+   <script src="https://codesalvageon.github.io/magichat/scripts/nerdamer.js"></script>
+   <script src="https://codesalvageon.github.io/magichat/scripts/jquery.js"></script>
+
+   <script src="/static/warp.js"></script>
+   <script src="/static/defense.js"></script>
+   <script src="/static/calendar.js"></script>
+  </body>
+</html>

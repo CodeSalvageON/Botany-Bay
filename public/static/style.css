@@ -1,0 +1,113 @@
+body {
+  color: #ffcc00;
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+a, a::after {
+  color: #ffcc00;
+}
+
+.input {
+  color: #ffcc00;
+  background-color: black;
+  border: 1px solid #ffcc00;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.augbutton {
+  color: #ffcc00;
+  background-color: gray;
+  border: 1px solid #ffcc00;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.augbutton:hover {
+  background-color: #ffcc00;
+}
+
+.timeblock {
+  width: 100px;
+  height: 130px;
+  color: #ffcc00;
+  position: relative;
+  background-color: black;
+  border: 1px solid #ffcc00;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.flex {
+  display: flex;
+}
+
+.small-text {
+  font-size: 15px;
+}
+
+#datetime {
+  top: 0px;
+  right: 5px;
+  position: fixed;
+}
+
+#hud-input1 {
+  height: 140px;
+}
+
+#hud-input2 {
+  height: 225px;
+}
+
+#hud-input1, #hud-input2, #hud-input3, #hud-input4, #hud-input5, #hud-input6 {
+  width: 40vw;
+  padding: 8px;
+  border: 1px solid #ffcc00;
+}
+
+#hud-left {
+  left: 0px;
+  position: absolute;
+}
+
+#hud-right {
+  right: 0px;
+  position: absolute;
+}
+
+#num1, #num2 {
+  width: 100px;
+}
+
+#eqtype {
+  width: 50px;
+}
+
+#company-select {
+  width: 100px;
+}
+
+#notes {
+  width: 500px;
+  height: 400px;
+  color: #ffcc00;
+  background-color: black;
+  border: 1px solid #ffcc00;
+}
+
+#timeblocks {
+  left: 5px;
+  position: relative;
+}
+
+#days {
+  left: 0px;
+  position: absolute;
+}
+
+#chatbox {
+  width: 500px;
+  height: 400px;
+  color: #ffcc00;
+  background-color: black;
+  border: 1px solid #ffcc00;
+}
