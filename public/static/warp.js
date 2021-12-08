@@ -46,6 +46,8 @@ $("#chat-msg").submit(function () {
   });
 });
 
+chatbox.scrollTo(0, chatbox.scrollHeight);
+
 setInterval(function () {
   fetch ("/getchat")
   .then(response => response.text())
