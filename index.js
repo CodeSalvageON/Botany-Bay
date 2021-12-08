@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 3000;
 var io = require('socket.io')(http);
-const sanitizer = require('sanitizer');
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -80,8 +79,8 @@ app.post('/postchat', async function (req, res) {
   const message = req.body.message;
   const username = req.body.username;
 
-  const clean_username = sanitizer.escape(username);
-  const clean_message = sanitizer.escape(message);
+  const clean_username = DOMPurify.sanitize(username);
+  const clean_message = DOMPurify.sanitize(message);
 
   if (clean_username === "" || clean_username === null || clean_username === undefined) {
     clean_username = "Anonymous";
