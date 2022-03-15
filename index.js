@@ -6,7 +6,6 @@ var http = require('http').Server(app);
 var bodyParser = require('body-parser');
 
 var port = process.env.PORT || 3000;
-var io = require('socket.io')(http);
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
@@ -28,7 +27,7 @@ var requestLoop = setInterval(function(){
           console.log('error' + response.statusCode);
       }
   });
-}, 30000);
+}, 60000);
 
 process.on('uncaughtException', function (exception) {
   console.log(exception);

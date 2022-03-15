@@ -48,26 +48,6 @@ $("#chat-msg").submit(function () {
 
 chatbox.scrollTo(0, chatbox.scrollHeight);
 
-setInterval(function () {
-  fetch ("/getchat")
-  .then(response => response.text())
-  .then(data => {
-    if (data === chat_slot) {
-      // Do nothing
-    }
-
-    else {
-      chat_slot = data;
-      
-      chatbox.innerHTML = data;
-      chatbox.scrollTo(0, chatbox.scrollHeight);
-    }
-  })
-  .catch(error => {
-    throw error;
-  });
-}, 500);
-
 if (ai_dedstorage === null) {
   localStorage.setItem("dedstorage", "[]");
   location = "";
