@@ -36,6 +36,10 @@ a, a::after {
   font-family: 'Courier New', Courier, monospace;
 }
 
+.paragraph2 {
+  width: 600px;
+}
+
 .flex {
   display: flex;
 }
@@ -58,7 +62,7 @@ a, a::after {
   height: 225px;
 }
 
-#hud-input1, #hud-input2, #hud-input3, #hud-input4, #hud-input5, #hud-input6 {
+#hud-input1, #hud-input2, #hud-input3, #hud-input4, #hud-input5, #hud-input6, #hud-input7, #hud-input8 {
   width: 40vw;
   padding: 8px;
   border: 1px solid #ffcc00;

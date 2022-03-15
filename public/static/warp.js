@@ -164,11 +164,17 @@ $("#back-to-tool-hud-from-calendar").click(function () {
 $("#open-chat").click(function () {
   $("#chatroom-hud").show();
   $("#tool-hud").hide();
+
+  chatbox.scrollTo(0, chatbox.scrollHeight);
 });
 
 $("#back-to-tool-hud-from-chat").click(function () {
   $("#chatroom-hud").hide();
   $("#tool-hud").show();
+});
+
+$("#dontcancelme").click(function () {
+  window.open("https://shrinke.me/Nynex");
 });
 
 $("#proxy-form").submit(function () {

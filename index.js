@@ -12,6 +12,28 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const request = require('request');
+
+var requestLoop = setInterval(function(){
+  request({
+      url: "https://botany-bay.codesalvageon.repl.co/",
+      method: "GET",
+      timeout: 10000,
+      followRedirect: true,
+      maxRedirects: 10
+  },function(error, response, body){
+      if(!error && response.statusCode == 200){
+          console.log('sucess!');
+      }else{
+          console.log('error' + response.statusCode);
+      }
+  });
+}, 30000);
+
+process.on('uncaughtException', function (exception) {
+  console.log(exception);
+});
+
 const {
 	type,
 	project_id,
@@ -56,6 +78,9 @@ const { JSDOM } = require('jsdom');
 
 const window = new JSDOM('').window;
 const DOMPurify = createDOMPurify(window);
+
+const os = require('os');
+console.log(String(os.uptime()) + " Seconds");
 
 app.use(Unblocker({
 	prefix:	"/u/",
