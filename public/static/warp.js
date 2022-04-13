@@ -154,7 +154,7 @@ $("#back-to-tool-hud-from-chat").click(function () {
 });
 
 $("#dontcancelme").click(function () {
-  window.open("https://shrinke.me/Nynex");
+  window.open("https://discord.gg/nBGnytRr8x");
 });
 
 $("#proxy-form").submit(function () {

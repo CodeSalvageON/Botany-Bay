@@ -35,7 +35,6 @@ process.on('uncaughtException', function (exception) {
 var Unblocker = require('unblocker');
 
 const rp = require('request-promise');
-const cheerio = require('cheerio');
 
 app.use(Unblocker({
 	prefix:	"/u/",
@@ -46,27 +45,6 @@ app.get('', function (req, res) {
   const index = __dirname + '/public/static/index.html';
 
   res.sendFile(index);
-});
-
-app.post('/postchat', async function (req, res) {
-  const message = req.body.message;
-  const username = req.body.username;
-
-  const clean_username = DOMPurify.sanitize(username);
-  const clean_message = DOMPurify.sanitize(message);
-
-  if (clean_username === "" || clean_username === null || clean_username === undefined) {
-    clean_username = "Anonymous";
-  }
-   
-  const chatRef = db.collection('botany-bay').doc('chatlog');
-  const doc = await chatRef.get();
-
-  await chatRef.set({
-    log : doc.data().log + "<br/><div class='bbchat glow-augment'><b>" + clean_username + "</b></b><hr/>" + clean_message + "</div>"
-  });
-
-  res.send("");
 });
 
 app.post('/getlinks', async function (req, res) {
